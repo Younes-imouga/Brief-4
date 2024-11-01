@@ -102,9 +102,9 @@ p{
 }
 /*featured products*/
 /*small container edit whole section consist of rows*/
-.small container{
+.small-container{
     max-width: 1080px;
-    margin:auto;/*make images in center*/
+    margin:auto; /*make images in center*/
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -384,8 +384,9 @@ input:focus{
 }
 .small-img-row{
     display:flex;/*make all 4 images flexible*/
-    width: 46em;
+    width: 100%;
     justify-content: space-between;/*this will make all 4 images to take equal available space in single line without any gap, mean 25% each col, and to place gap between each col, we call col below and made 24% so to have a gap*/
+    flex-wrap: wrap;
 }
 .small-img-col{
     flex-basis: 24%;/*this will make each column to take 24% space and 1% gap*/
@@ -425,7 +426,7 @@ td input{
 }
 td a{
     color: #ff523b;
-    ffont-size: 12px;
+    font-size: 12px;
 }
 td img{
     width: 80px;

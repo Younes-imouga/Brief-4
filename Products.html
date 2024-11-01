@@ -10,25 +10,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* Add your CSS styles here */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
         }
         .container {
-            width: 90%;
+            width: 100%;
             margin: auto;
+            margin-top: 40px;
             padding: 20px;
         }
         .row1 {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+
         }
         .col-4 {
             width: 23%;
-            background-color: #f4f4f4;
+            /* background-color: #f4f4f4; */
             border-radius: 5px;
             margin-bottom: 20px;
             padding: 10px;
@@ -38,56 +39,73 @@
             height: auto;
         }
         .rating {
-            color: #f39c12; /* Gold color for stars */
+            color: #f39c12; 
         }
-        header {
-            background-color: #333;
-            padding: 10px 0;
-            color: #fff;
+        .add{
+            position: relative;
         }
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+        .add:hover .panier{
+            display: block;
         }
-        .menu-bar, .menu-bar-side {
-            list-style: none;
-            display: flex;
-            align-items: center;
+
+
+        .panier{
+            position: absolute;
+            right: 50%;
+            bottom: 50%;
+            display: none;
+            width: 100px;
+            padding: 10px;
+            background-color: rgb(253, 93, 34); 
+            border: none;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px; 
+            transform: translate(50%);      
         }
-        .menu-bar-side li, .menu-bar li {
-            margin: 0 15px;
+        .panier:hover{
+            background-color: rgb(165, 60, 22); 
+            cursor: pointer;
         }
-        .menu-bar-side a, .menu-bar a {
-            color: #fff;
-            text-decoration: none;
+
+        .panier:active{
+            background-color: rgb(168, 92, 64);
         }
-        /* Add more styles as needed */
+
     </style>
 </head>
 
 <body>
 
     <header>
+            
         <nav id="nav">
+
             <img src="images/logo-white.png" class="logo" alt="Logo">
+
             <ul class="menu-bar-side" id="nav-list">
+
                 <li><a href="index.html" style="all: unset;">Home</a></li>
                 <li><a href="Products.html" style="all: unset;">Shop</a></li>
                 <li><a href="#" style="all: unset;">About</a></li>
                 <li><a href="#" style="all: unset;">Contact Us</a></li>
+
             </ul>
+
             <ul class="menu-bar">
-                <li>&#36;0.00</li>
-                <li><i class='fas fa-shopping-cart'></i></li>
+                <a href="panier.html" style="color: white;">
+                    <li>&#36;0.00</li>
+                    <li><i class='fas fa-shopping-cart'></i></li>
+                </a>
             </ul>
+
             <i class="fa fa-bars" id="togglebtn" style="cursor: pointer;"></i>
+
         </nav>
+
     </header>
 
     <div class="container">
-        <div style="display: flex; justify-content: space-around;">
+        <div style="display: flex; justify-content: space-around; margin-bottom: 40px; flex-wrap: wrap;">
             <h1>Products</h1>
             <div>
                 <label for="categorysort">Sort by Category:</label>
@@ -114,7 +132,7 @@
         
 
         <div class="row row1">
-            <!-- Product items will be injected here by JavaScript -->
+
         </div>
     </div>
 
@@ -159,7 +177,8 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/burger-menu.js"></script>
+    <script src="js/Products.js"></script>
 
 </body>
 

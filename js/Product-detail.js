@@ -1,3 +1,5 @@
+// JS FOR PRODUCT DETAIL
+
 var ProductImg = document.getElementById("product-img");//larger image
 var SmallImg = document.getElementsByClassName("small-img");//it returns list of 4 images having index 0,1,2,3 as we have 4 images with class name "small0-img" 
 

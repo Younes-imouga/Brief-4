@@ -1,5 +1,9 @@
+//JS FOR PANIER
+
 const topanier = JSON.parse(localStorage.getItem('topanier')) || [];
 
+
+// function to load items in the table body 
 function load(topanier) {
     const container = document.getElementById("bodyOfTable");
     container.innerHTML = '';
@@ -12,7 +16,7 @@ function load(topanier) {
                 <div>
                     <p>${topanier[i].name}</p>
                     <small>price: $${topanier[i].price}</small><br>
-                    <a href="#">Remove</a>
+                    <a href="#" class = "remove-btn">Remove</a>
                 </div>
             </div>
         </td>
@@ -23,6 +27,35 @@ function load(topanier) {
 }
 load(topanier);
 
+// function to remove items 
+
+function removeproduct() {
+    const removebtns = document.querySelectorAll(".remove-btn");
+    removebtns.forEach(removebtn => {   
+        removebtn.addEventListener("click", function() {
+            const removing = removebtn.closest("tr");
+            const remov = removing.querySelector(".cart-info p");
+
+            for (let i = 0; i < topanier.length; i++) {
+                if (remov.textContent === topanier[i].name) {
+                    topanier.splice(i, 1);
+                    break;
+                }
+            }
+
+            localStorage.setItem("topanier", JSON.stringify(topanier));
+            removing.remove();
+            updatetotal();
+        })
+    })
+}
+removeproduct();
+
+
+
+
+
+//function to update the quantity in real time:
 const quantityinputs = document.querySelectorAll(".quantity");
 
 quantityinputs.forEach(quantityinput => {
@@ -51,6 +84,8 @@ quantityinputs.forEach(quantityinput => {
     });
 });
 
+
+// function to update the prices in the buttom
 function updatetotal() {
     const prices = document.querySelectorAll(".total-price-num");
     let subtotal = 0;
@@ -73,3 +108,5 @@ function updatetotal() {
 }
 
 updatetotal();
+
+

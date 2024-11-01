@@ -1,4 +1,4 @@
-// JS for Single product detail
+// JS for product
 
 // The array that contains the products
 const products = [
@@ -103,6 +103,7 @@ function displayProducts(products) {
 
         container.appendChild(productDiv);
     });
+
 }
 
 
@@ -110,15 +111,15 @@ function displayProducts(products) {
 displayProducts(products);
 
 
-// add to panier
 
+// Add to panier
 
-// Page 1: Setting up the array and saving it
-const addpanier = document.querySelectorAll(".panier");
+const container = document.querySelector(".row1"); 
 
-addpanier.forEach(clicked => {
-    clicked.addEventListener("click", function() {
-        const clickedparent = clicked.parentNode;
+container.addEventListener("click", function(event) {
+    // Check if the clicked element is an add to cart button
+    if (event.target.classList.contains("panier")) {
+        const clickedparent = event.target.parentNode; // Get the parent div
         const title = clickedparent.querySelector('h4').textContent;
 
         // Retrieve existing topanier from localStorage
@@ -149,16 +150,9 @@ addpanier.forEach(clicked => {
             }
         }
 
-        // console.log('Current topanier:', topanier);
-
         localStorage.setItem('topanier', JSON.stringify(topanier));
-    });
+    }
 });
-
-
-
-
-
 
 
 
@@ -189,5 +183,7 @@ clickedLinks.forEach(link => {
         }
     });
 });
+
+
 
 // localStorage.clear();

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>product detail page</title>
+        <link rel="stylesheet" href="css/style.css"> 
+        <link rel="stylesheet" href="css/detail.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/checkout.css">
+<!---- icon cdn link---->
+
+
+    </head>
+
+    <body>
+
+       
+        
+        <!--making header-->
+        <header>
+        
+            <nav id="nav">
+
+                <img src="images/logo-white.png" class="logo" alt="Logo">
+
+                <ul class="menu-bar-side" id="nav-list">
+
+                    <li><a href="index.html" style="all: unset;">Home</a></li>
+                    <li><a href="Products.html" style="all: unset;">Shop</a></li>
+                    <li><a href="#" style="all: unset;">About</a></li>
+                    <li><a href="#" style="all: unset;">Contact Us</a></li>
+
+                </ul>
+
+                <ul class="menu-bar">
+                    <a href="panier.html" style="color: white; display: flex;">
+                        <li id="total-money">&#36;0.00</li>
+                        <li>
+                            <p style="color: white;" id="product-counter">1</p>
+                        </li>
+                        <li>
+                            <i class='fas fa-shopping-cart'></i>
+                        </li>
+                    </a>
+                </ul>
+
+                <i class="fa fa-bars" id="togglebtn" style="cursor: pointer;"></i>
+
+            </nav>
+
+        </header>
+        <!-- checkout  -->
+
+        <div>
+        <div class="container">
+    <h2 class="form-title">Product Order Form</h2>
+    <div class="order-form">
+        <!-- Left Side: Order Form -->
+        <div class="form-section">
+            <form action="#" method="post">
+
+                <div style="display: flex; text-wrap: nowrap;">
+                    <label style="margin-top: 2.5%;" for="first-name">First Name* :</label>
+                    <input style="width: 90%;" type="text" id="first-name" name="first-name" required>
+                </div>
+
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last-name" required>
+                
+                <label for="company-name">Company Name (Optional)</label>
+                <input type="text" id="company-name" name="company-name">
+                
+                <label for="country">Country *</label>
+                <select id="country" name="country" required>
+                    <option value="Mexico">Mexico</option>
+                    <!-- Add more countries as needed -->
+                </select>
+                
+                <label for="street-address">Street Address *</label>
+                <input type="text" id="street-address" name="street-address" required>
+                
+                <label for="address-line2">Apartment, suite, unit, etc. (optional)</label>
+                <input type="text" id="address-line2" name="address-line2">
+                
+                <label for="city">Town / City *</label>
+                <input type="text" id="city" name="city" required>
+                
+                <label for="state">State / County *</label>
+                <input type="text" id="state" name="state" required>
+                
+                <label for="postcode">Postcode / ZIP *</label>
+                <input type="text" id="postcode" name="postcode" required>
+                
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </form>
+        </div>
+
+        <!-- Right Side: Order Summary -->
+        <div class="summary-section">
+            <div class="order-summary">
+                <h3>Your Order</h3>
+                <p>Product Name x 2(Qty) <span>$88.00</span></p>
+                <p>Subtotal <span>$88.00</span></p>
+                <p>Shipping <span style="color: green;">Free shipping</span></p>
+                
+                <h4>Payment Method</h4>
+                <input type="radio" id="bank-transfer" name="payment" value="bank-transfer" checked>
+                <label for="bank-transfer">Direct Bank Transfer</label>
+                <p class="payment-description">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                
+                <input type="radio" id="cod" name="payment" value="cod">
+                <label for="cod">Cash on Delivery</label><br>
+                
+                <input type="radio" id="paypal" name="payment" value="paypal">
+                <label for="paypal">Paypal</label>
+                
+                <button type="submit" class="place-order-button">Place Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-------footer------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                
+          
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios mobile phone.</p>
+                   
+                 
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>   
+                
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                    
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                    
+                </div>
+            </div>
+    
+            <hr>
+            <a href="" class="copyright">Copyright 2024   - Made with ❤️ LorenzCipher</a>
+        </div>
+    </div>         
+
+    <!-----------------JS----------------------->
+    <script src="js/burger-menu.js"></script>
+
+    </body>
+
+
+</html>

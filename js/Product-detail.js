@@ -34,8 +34,6 @@ const title = document.getElementById("title");
 const price = document.getElementById("price");
 const detail = document.getElementById("product-detail");
 
-console.log(productData);
-    
     mainimg.src = productData.image;
 
     for (let i = 0; i < smallimg.length; i++) {
@@ -49,3 +47,56 @@ console.log(productData);
     price.textContent = `${productData.price}$`;
 
     detail.textContent = productData.Description;
+
+    const topanier = JSON.parse(localStorage.getItem('topanier')) || [];
+
+    function counting() {
+
+        const productcounter = document.getElementById("product-counter");
+        const productcost = document.getElementById("total-money");
+        
+        let cost = 0;
+        productcounter.textContent = topanier.length;
+        for (let i = 0; i < topanier.length; i++) {
+            cost += (Number(topanier[i].price)*Number(topanier[i].quantity));        
+        }
+        productcost.textContent = `$${Number(cost)}`;
+    }
+    counting();
+
+
+    const addbtn = document.getElementById("addbtn");
+    const quantitybtn = document.getElementById("quantitybtn");
+    let array = {...productData};
+
+    addbtn.addEventListener("click", addtopanier);
+    quantitybtn.addEventListener("change", updatequantity);
+
+    function updatequantity() {
+        array.quantity = quantitybtn.value;
+    }
+
+    function addtopanier() {
+        updatequantity();
+
+        let inpanier = false;
+        let index = -1;
+
+        for (let i = 0; i < topanier.length; i++) {
+            if (topanier[i].name === array.name) {
+                inpanier = true;
+                index = i;
+                break;
+            }
+        }
+
+        if (inpanier) {
+            let sum = Number(topanier[index].quantity) + Number(array.quantity);
+            topanier[index].quantity = sum;
+        } else {
+            topanier.push({...array});
+        }
+        console.log(topanier)
+        localStorage.setItem('topanier', JSON.stringify(topanier));
+        counting(); 
+    }

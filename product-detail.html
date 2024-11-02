@@ -37,9 +37,14 @@
                     </ul>
     
                     <ul class="menu-bar">
-                        <a href="panier.html" style="color: white;">
-                            <li>&#36;0.00</li>
-                            <li><i class='fas fa-shopping-cart'></i></li>
+                        <a href="panier.html" style="color: white; display: flex;">
+                            <li id="total-money">&#36;0.00</li>
+                            <li>
+                                <p style="color: white;" id="product-counter">1</p>
+                            </li>
+                            <li>
+                                <i class='fas fa-shopping-cart'></i>
+                            </li>
                         </a>
                     </ul>
     
@@ -99,8 +104,8 @@
                     </select>
                     
                     <!--no of products-->
-                    <input type="number" value="1">
-                    <a href="#" id="" class="btn">Add To Cart</a><!--add to cart button-->
+                    <input type="number" value="1" id="quantitybtn">
+                    <a href="#" id="addbtn" class="btn">Add To Cart</a><!--add to cart button-->
                     <h3>Product Details <i class="fa fa-indent" aria-hidden="true"></i></h3>
                     <br>
                     <p id="product-detail">Give Your summer wardrobe a style upgrade with the HTX Men's 

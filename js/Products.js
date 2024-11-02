@@ -14,7 +14,9 @@ const products = [
     { name: "Classic Leather Sneakers", rating: 4, price: 55, category: "shoes", size: "sm", quantity: 1, image: "Images/product-10.jpg", Description: "Sleek leather sneakers with a cushioned insole, perfect for a casual or semi-formal look. Versatile enough to pair with various outfits." },
     { name: "Casual Sneakers", rating: 2, price: 60, category: "shoes", size: "sm", quantity: 1, image: "Images/product-11.jpg", Description: "Comfortable sneakers perfect for daily wear. Lightweight design ensures ease of movement throughout the day." },
     { name: "Vintage Denim Pants", rating: 1, price: 45, category: "pants", size: "sm", quantity: 1, image: "Images/product-12.jpg", Description: "Stylish high-rise denim with a vintage wash. A trendy choice that combines comfort with a retro aesthetic." },
-];
+]; 
+
+
 
 
 //sorting system start here
@@ -25,6 +27,7 @@ const pricevalue = document.getElementById("range-value");
 
 pricerange.addEventListener("input", function () {
     pricevalue.textContent = `$${pricerange.value}`;
+    
 });
 
 function filterProducts() {
@@ -36,6 +39,7 @@ function filterProducts() {
         const priceMatch = product.price <= maxPrice;
         return categoryMatch && priceMatch;
     });
+    
 }
 
 categorysort.addEventListener("change", updateDisplay);
@@ -50,6 +54,7 @@ function updateDisplay() {
     }
 
     displayProducts(filteredProducts);
+    
 }
 
 //sorting system ends
@@ -102,8 +107,8 @@ function displayProducts(products) {
         productDiv.appendChild(price);
 
         container.appendChild(productDiv);
+        
     });
-
 }
 
 
@@ -115,15 +120,13 @@ displayProducts(products);
 // Add to panier
 
 const container = document.querySelector(".row1"); 
+let topanier = JSON.parse(localStorage.getItem('topanier')) || [];
 
 container.addEventListener("click", function(event) {
     // Check if the clicked element is an add to cart button
     if (event.target.classList.contains("panier")) {
         const clickedparent = event.target.parentNode; // Get the parent div
         const title = clickedparent.querySelector('h4').textContent;
-
-        // Retrieve existing topanier from localStorage
-        let topanier = JSON.parse(localStorage.getItem('topanier')) || [];
 
         // Check if the product is already in topanier
         let inpanier = false;
@@ -151,7 +154,9 @@ container.addEventListener("click", function(event) {
         }
 
         localStorage.setItem('topanier', JSON.stringify(topanier));
+        console.log(topanier)
     }
+    counting();
 });
 
 
@@ -184,6 +189,23 @@ clickedLinks.forEach(link => {
     });
 });
 
+
+const productcounter = document.getElementById("product-counter");
+
+function counting() {
+
+    const topanier = JSON.parse(localStorage.getItem('topanier')) || [];
+    const productcounter = document.getElementById("product-counter");
+    const productcost = document.getElementById("total-money");
+    
+    let cost = 0;
+    productcounter.textContent = topanier.length;
+    for (let i = 0; i < topanier.length; i++) {
+        cost += (Number(topanier[i].price)*Number(topanier[i].quantity));        
+    }
+    productcost.textContent = `$${Number(cost)}`;
+}
+counting();
 
 
 // localStorage.clear();

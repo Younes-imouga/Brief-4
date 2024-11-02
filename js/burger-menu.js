@@ -1,4 +1,5 @@
 // Burger menu starts here
+
 const togglebtn = document.getElementById("togglebtn");
 const navlist = document.getElementById("nav-list");
 const navigation = document.getElementById("nav");

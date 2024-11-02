@@ -9,7 +9,7 @@ function load(topanier) {
     container.innerHTML = '';
     for (let i = 0; i < topanier.length; i++) {
         const productcart = document.createElement("tr");
-        productcart.innerHTML = `     
+        productcart.innerHTML = `
         <td>
             <div class="cart-info">
                 <img src=${topanier[i].image} alt="">
@@ -46,6 +46,7 @@ function removeproduct() {
             localStorage.setItem("topanier", JSON.stringify(topanier));
             removing.remove();
             updatetotal();
+            counting();
         })
     })
 }
@@ -81,6 +82,7 @@ quantityinputs.forEach(quantityinput => {
             }
         }
         updatetotal();
+        counting();
     });
 });
 
@@ -105,8 +107,23 @@ function updatetotal() {
 
     const finaltotal = document.getElementById("total");
     finaltotal.textContent = `$${(subtotal + taxes).toFixed(2)}`
+    counting();
 }
+
 
 updatetotal();
 
+function counting() {
 
+    const topanier = JSON.parse(localStorage.getItem('topanier')) || [];
+    const productcounter = document.getElementById("product-counter");
+    const productcost = document.getElementById("total-money");
+    
+    let cost = 0;
+    productcounter.textContent = topanier.length;
+    for (let i = 0; i < topanier.length; i++) {
+        cost += (Number(topanier[i].price)*Number(topanier[i].quantity));        
+    }
+    productcost.textContent = `$${Number(cost)}`;
+}
+counting();

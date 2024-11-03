@@ -1,142 +1,161 @@
-/* Container styling */
-.container {
-    max-width: 70%;
-    margin: 50px auto;
-    padding: 20px;
-}
-
-.form-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.form-title::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #ff523b;
-    margin: 8px auto;
-}
-
-/* Flexbox layout for form and summary */
-.order-form {
-    display: flex;
-    gap: 20px;
-}
-
-.form-section,
-.summary-section {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-section {
-    flex: 3;
-}
-
-.summary-section {
-    flex: 1;
-}
-
-/* Input field styling */
-.form-section form label {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.form-section form input,
-.form-section form select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f1f1f1;
-}
-
-.form-section form input:focus,
-.form-section form select:focus {
-    border-color: #ff523b;
-    outline: none;
-}
-
-/* Summary box styling */
-.summary-section h3 {
-    background-color: #ff523b;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px 5px 0 0;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.order-summary p {
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.order-summary p span {
-    font-weight: 600;
-}
-
-.payment-description {
-    font-size: 12px;
-    color: #666;
-    padding: 10px 0;
-}
-
-/* Payment method options */
-.order-summary label {
-    display: block;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.order-summary input[type="radio"] {
-    margin-right: 10px;
-}
-
-/* Place Order button */
-.place-order-button {
-    width: 100%;
-    background-color: #ff523b;
-    color: #fff;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.place-order-button:hover {
-    background-color: #e14c3b;
-}
-
-.inputt{
-    width: 80%;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-    .order-form {
-        flex-direction: column;
+    /* General container styling */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
     }
-}
+
+    /* Title styling */
+    .form-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+    }
+
+    .form-title::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: #ff523b;
+        margin: 8px auto;
+        border-radius: 5px;
+    }
+
+    /* Layout for form and summary */
+    .order-form {
+        display: flex;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .form-section,
+    .summary-section {
+        background-color: #f9f9f9;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-section {
+        flex: 3;
+    }
+
+    .summary-section {
+        flex: 1;
+    }
+
+    /* Table styling in form */
+    .form-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .form-table td {
+        padding: 10px 5px;
+    }
+
+    .form-table label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .form-table input,
+    .form-table select {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .form-table input:focus,
+    .form-table select:focus {
+        border-color: #ff523b;
+        outline: none;
+        background-color: #e9ecef;
+    }
+
+    /* Summary box styling */
+    .summary-section h3 {
+        background-color: #ff523b;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 10px 10px 0 0;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .order-summary p {
+        font-size: 14px;
+        padding: 10px 0;
+        border-bottom: 1px solid #e0e0e0;
+        display: flex;
+        justify-content: space-between;
+        color: #333;
+    }
+
+    .order-summary p span {
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .payment-description {
+        font-size: 12px;
+        color: #666;
+        line-height: 1.5;
+        margin-top: 10px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Payment method options */
+    .order-summary label {
+        display: block;
+        font-size: 14px;
+        margin-top: 10px;
+        font-weight: 500;
+        color: #333;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .order-summary input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    /* Place Order button */
+    #place-order-button {
+        width: 100%;
+        background-color: #ff523b;
+        color: #fff;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #place-order-button:hover {
+        background-color: #e14c3b;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+        .order-form {
+            flex-direction: column;
+        }
+    }

@@ -37,17 +37,19 @@
 
                 </ul>
 
-                <ul class="menu-bar">
-                    <a href="panier.html" style="color: white; display: flex;">
-                        <li id="total-money">&#36;0.00</li>
-                        <li>
-                            <p style="color: white;" id="product-counter">1</p>
-                        </li>
-                        <li>
-                            <i class='fas fa-shopping-cart'></i>
-                        </li>
-                    </a>
-                </ul>
+            <ul class="menu-bar">
+                <a href="checkout.html" style="color: white;">
+                    <li id="total-money">&#36;0.00</li>
+                </a>
+                <a href="panier.html" style="color: white; display: flex;">
+                    <li>
+                        <p style="color: white;" id="product-counter">1</p>
+                    </li>
+                    <li>
+                        <i class='fas fa-shopping-cart'></i>
+                    </li>
+                </a>
+            </ul>
 
                 <i class="fa fa-bars" id="togglebtn" style="cursor: pointer;"></i>
 
@@ -56,78 +58,121 @@
         </header>
         <!-- checkout  -->
 
-        <div>
         <div class="container">
-    <h2 class="form-title">Product Order Form</h2>
-    <div class="order-form">
-        <!-- Left Side: Order Form -->
-        <div class="form-section">
-            <form action="#" method="post">
-
-                <div style="display: flex; text-wrap: nowrap;">
-                    <label style="margin-top: 2.5%;" for="first-name">First Name* :</label>
-                    <input style="width: 90%;" type="text" id="first-name" name="first-name" required>
+            <h2 class="form-title">Product Order Form</h2>
+    
+            <div class="order-form">
+                <!-- Left: Form Section with Table -->
+                <div class="form-section">
+                    <form>
+                        <table class="form-table">
+                            <tr>
+                                <td style="width: 30%;">
+                                    <label for="first-name">First Name <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="text" id="first-name" required class="champ-obligatoire"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="last-name">Last Name <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="text" id="last-name" required class="champ-obligatoire"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="company-name">Company Name (Optional)</label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="text" id="company-name" class="champ-obligatoire"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="country">Country <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p .class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td>
+                                    <select id="country" required>
+                                        <option value="default">your country</option>
+                                        <option value="Mexico">Morroco</option>
+                                        <option value="Mexico">France</option>
+                                        <option value="Mexico">U.S.A</option>
+                                        <option value="Mexico">UK</option>
+                                        <option value="Mexico">Algeria</option>
+                                        <option value="Mexico">Tunisie</option>
+                                        <option value="Mexico">Spain</option>
+                                        <option value="Mexico">Germany</option>
+                                        <option value="Mexico">Mexico</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="street-address">Street Address <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="text" id="street-address" required class="champ-obligatoire"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="text" id="apartment" placeholder="Apartment, suite, unit etc. (optional)"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="town-city">Town / City <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="text" id="town-city" required class="champ-obligatoire"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="state-county">State / County <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="text" id="state-county" required class="champ-obligatoire"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="postcode">Postcode / ZIP <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="text" id="postcode" required class="champ-obligatoire"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="phone">Phone <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="tel" id="phone" required class="champ-obligatoire"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="email">Email Address <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                </td>
+                                <td><input type="email" id="email" required class="champ-obligatoire"></td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
-
-                <label for="last-name">Last Name *</label>
-                <input type="text" id="last-name" name="last-name" required>
-                
-                <label for="company-name">Company Name (Optional)</label>
-                <input type="text" id="company-name" name="company-name">
-                
-                <label for="country">Country *</label>
-                <select id="country" name="country" required>
-                    <option value="Mexico">Mexico</option>
-                    <!-- Add more countries as needed -->
-                </select>
-                
-                <label for="street-address">Street Address *</label>
-                <input type="text" id="street-address" name="street-address" required>
-                
-                <label for="address-line2">Apartment, suite, unit, etc. (optional)</label>
-                <input type="text" id="address-line2" name="address-line2">
-                
-                <label for="city">Town / City *</label>
-                <input type="text" id="city" name="city" required>
-                
-                <label for="state">State / County *</label>
-                <input type="text" id="state" name="state" required>
-                
-                <label for="postcode">Postcode / ZIP *</label>
-                <input type="text" id="postcode" name="postcode" required>
-                
-                <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone" required>
-                
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-            </form>
-        </div>
-
-        <!-- Right Side: Order Summary -->
-        <div class="summary-section">
-            <div class="order-summary">
-                <h3>Your Order</h3>
-                <p>Product Name x 2(Qty) <span>$88.00</span></p>
-                <p>Subtotal <span>$88.00</span></p>
-                <p>Shipping <span style="color: green;">Free shipping</span></p>
-                
-                <h4>Payment Method</h4>
-                <input type="radio" id="bank-transfer" name="payment" value="bank-transfer" checked>
-                <label for="bank-transfer">Direct Bank Transfer</label>
-                <p class="payment-description">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-                
-                <input type="radio" id="cod" name="payment" value="cod">
-                <label for="cod">Cash on Delivery</label><br>
-                
-                <input type="radio" id="paypal" name="payment" value="paypal">
-                <label for="paypal">Paypal</label>
-                
-                <button type="submit" class="place-order-button">Place Order</button>
+    
+                <!-- Right: Order Summary Section -->
+                <div class="summary-section">
+                    <h3>Your Order</h3>
+                    <div class="order-summary">
+                        <p>Product Name x 2 (Qty) <span>$88.00</span></p>
+                        <p>Subtotal <span>$88.00</span></p>
+                        <p>Shipping <span>Free shipping</span></p>
+                        <label><input type="radio" name="payment" checked> Direct Bank Transfer</label>
+                        <p class="payment-description">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                        <label><input type="radio" name="payment"> Cash on Delivery</label>
+                        <label><input type="radio" name="payment"> Paypal</label>
+                        <button id="place-order-button">Place Order</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
 
@@ -184,6 +229,7 @@
 
     <!-----------------JS----------------------->
     <script src="js/burger-menu.js"></script>
+    <script src="js/checkout.js"></script>
 
     </body>
 

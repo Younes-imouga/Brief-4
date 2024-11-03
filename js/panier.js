@@ -106,7 +106,7 @@ function updatetotal() {
     tax.textContent = `$${taxes.toFixed(2)}`;
 
     const finaltotal = document.getElementById("total");
-    finaltotal.textContent = `$${(subtotal + taxes).toFixed(2)}`
+    finaltotal.textContent = `$${(subtotal + taxes).toFixed(2)}`    
     counting();
 }
 

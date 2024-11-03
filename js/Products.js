@@ -14,7 +14,7 @@ const products = [
     { name: "Classic Leather Sneakers", rating: 4, price: 55, category: "shoes", size: "sm", quantity: 1, image: "Images/product-10.jpg", Description: "Sleek leather sneakers with a cushioned insole, perfect for a casual or semi-formal look. Versatile enough to pair with various outfits." },
     { name: "Casual Sneakers", rating: 2, price: 60, category: "shoes", size: "sm", quantity: 1, image: "Images/product-11.jpg", Description: "Comfortable sneakers perfect for daily wear. Lightweight design ensures ease of movement throughout the day." },
     { name: "Vintage Denim Pants", rating: 1, price: 45, category: "pants", size: "sm", quantity: 1, image: "Images/product-12.jpg", Description: "Stylish high-rise denim with a vintage wash. A trendy choice that combines comfort with a retro aesthetic." },
-]; 
+];
 
 
 
@@ -154,7 +154,6 @@ container.addEventListener("click", function(event) {
         }
 
         localStorage.setItem('topanier', JSON.stringify(topanier));
-        console.log(topanier)
     }
     counting();
 });
@@ -165,7 +164,7 @@ container.addEventListener("click", function(event) {
 
 
 
-const clickedLinks = document.querySelectorAll(".click"); // Select all the clickable links
+const clickedLinks = document.querySelectorAll(".click");
 
 clickedLinks.forEach(link => {
     link.addEventListener("click", function(event) {

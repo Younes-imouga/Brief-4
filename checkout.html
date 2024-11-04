@@ -83,26 +83,23 @@
                             <tr>
                                 <td>
                                     <label for="company-name">Company Name (Optional)</label>
-                                    <p class="error-message" style="display: none;">ce champ est obligatoire</p>
                                 </td>
-                                <td><input type="text" id="company-name" class="champ-obligatoire"></td>
+                                <td><input type="text" id="company-name"></td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="country">Country <span class = "star" style="color: red; display: none;">*</span></label>
-                                    <p .class="error-message" style="display: none;">ce champ est obligatoire</p>
+                                    <label for="country">Country <span id="country-l" style="color: red; display: none;">*</span></label>
+                                    <p class="error-message" id="country-p" style="display: none;">ce champ est obligatoire</p>
                                 </td>
                                 <td>
                                     <select id="country" required>
                                         <option value="default">your country</option>
-                                        <option value="Mexico">Morroco</option>
-                                        <option value="Mexico">France</option>
-                                        <option value="Mexico">U.S.A</option>
-                                        <option value="Mexico">UK</option>
-                                        <option value="Mexico">Algeria</option>
-                                        <option value="Mexico">Tunisie</option>
-                                        <option value="Mexico">Spain</option>
-                                        <option value="Mexico">Germany</option>
+                                        <option value="Morroco">Morroco</option>
+                                        <option value="France">France</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="Tunisie">Tunisie</option>
+                                        <option value="Spain">Spain</option>
+                                        <option value="Germany">Germany</option>
                                         <option value="Mexico">Mexico</option>
                                     </select>
                                 </td>
@@ -148,7 +145,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="email">Email Address <span class = "star" style="color: red; display: none;">*</span></label>
+                                    <label for="email">Email Address <span class ="star" style="color: red; display: none;">*</span></label>
                                     <p class="error-message" style="display: none;">ce champ est obligatoire</p>
                                 </td>
                                 <td><input type="email" id="email" required class="champ-obligatoire"></td>
@@ -161,14 +158,14 @@
                 <div class="summary-section">
                     <h3>Your Order</h3>
                     <div class="order-summary">
-                        <p>Product Name x 2 (Qty) <span>$88.00</span></p>
-                        <p>Subtotal <span>$88.00</span></p>
+                        <p>Subtotal <span id="total-money2"></span></p>
                         <p>Shipping <span>Free shipping</span></p>
                         <label><input type="radio" name="payment" checked> Direct Bank Transfer</label>
                         <p class="payment-description">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
                         <label><input type="radio" name="payment"> Cash on Delivery</label>
                         <label><input type="radio" name="payment"> Paypal</label>
                         <button id="place-order-button">Place Order</button>
+                        <h3 id="done" style="margin: 10px auto; display: none;">achat succesfull</h3>
                     </div>
                 </div>
             </div>

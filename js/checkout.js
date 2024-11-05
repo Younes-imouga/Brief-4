@@ -85,6 +85,5 @@
             productcost.textContent = `$${Number(cost)}`;
             productcost2.textContent = `$${Number(cost)}`;
         }
-        // counting();
 
         
